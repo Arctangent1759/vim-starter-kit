@@ -83,8 +83,9 @@ set noswapfile
 " The 'noremap' means that each mapping is independent of other mappings. This
 " is the recommended way to write vim mappings.
 "
-" A couple of mappings that I'm particularly fond of Uncomment them if you
-" want to use them.
+" A couple of mappings that I'm particularly fond of. They're commented out in
+" case you want to develop and learn your own keybindings.  Uncomment them if
+" you want to use them.
 
 " Allows you to exit insert mode into normal mode by tapping jk. With this
 " mapping, you won't have to reach for the escape key as often. It's good for
