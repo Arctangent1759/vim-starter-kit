@@ -5,10 +5,9 @@
 " Version:       0.0.0
 "
 " Various vim configs for inspiration:
-"
-" Alex Chu       : http://github.com/Arctangent1759/vim-stuff
-" Collin Johnson : http://github.com/CollinJ/dotfiles/blob/master/.vimrc
-" Zach Latta     : https://github.com/zachlatta/dotfiles/blob/master/vimrc
+"   http://github.com/Arctangent1759/vim-stuff
+"   http://github.com/CollinJ/dotfiles/blob/master/.vimrc
+"   https://github.com/zachlatta/dotfiles/blob/master/vimrc
 
 " Disable vi compatability. This makes your vim config incompatible with
 " really old legacy systems, but lets you use all the awesome new features
