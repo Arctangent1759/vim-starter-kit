@@ -2,102 +2,103 @@
 " behave when you press buttons.
 " Author:        Alex Chu (http://github.com/arctangent1759)
 " Homepage:      http://github.com/arctangent1759/vim-starter-kit
-" Readme:        
 " Version:       0.0.0
 
 " Disable vi compatability. This makes your vim config incompatible with
 " really old legacy systems, but lets you use all the awesome new features
 " that vim provides.
 set nocompatible
+
+" Set up the Vundle package manager. Vundle is a popular package manager for
+" vim that can install and manage plugins from Github or vim.org. There are
+" alternatives like Pathogen, but Vundle is the one I find the easiest to use.
+" See documentation at https://github.com/gmarik/Vundle.vim
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Let Vundle manage Vundle.
 Plugin 'gmarik/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'sjl/gundo.vim'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'bling/vim-airline'
-"Plugin 'plasticboy/vim-markdown'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'tpope/vim-surround'
-"Plugin 'flazz/vim-colorschemes'
-"Plugin 'ervandew/supertab'
-"Plugin 'kien/ctrlp.vim'
+" To install plugins, just add 'Plugin <Github or vim.org path here>' here.
+" For example:
+" Plugin 'bling/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
 
+" Set your leader key here. The leader key is an interface used by a lot of
+" plugins to namespace their commands from the ones provided by default in
+" vim. What this means is that the leader key is your new best friend, because
+" it will let you interact with all sorts of useful plugins while in normal
+" mode. Mine is set below. Feel free to change it.
 let mapleader=";"
-let localleader="'"
-let g:gundo_right=1
-let g:gundo_close_on_revert=1
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
-let g:airline#extensions#tabline#enabled = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" This enables syntax hilighting, making coding that much more awesome.
 syntax enable
+" Set the colorscheme to something you like. I like elflord for dark terminals
+" because it doesn't burn my eyes.
+colorscheme elflord
+" Notifies vim of your terminal background preferences. This changes the
+" behavior of the colorscheme to enhance contrast.
+set background=dark
 
+" Line numbering. To disable, run :set nonumber.
 set number
+
+" Makes the backspace key not break on cygwin and some old terminals.
 set backspace=indent,eol,start 
-set nowrap
-set cindent
-set expandtab
+
+" Smart tabbing behavior based on the tabbing level of the last line.
 set smarttab
+
+" Code with 2 spaces.
 set tabstop=2
 set shiftwidth=2
-set background=dark
-set incsearch
+
+" Shows the command you're entering into normal mode in the status bar.
 set showcmd
-set history=700
-set so=5
+
+" Pretty completion menu for command mode.
 set wildmenu
 set wildignore=*.o,*~,*.pyc
-set ruler
-set whichwrap+=<,>,h,l
-set smartcase
+
+" Makes unicode characters display nicely.
 set encoding=utf8
-set autowrite
+
+" No swaps. Swaps are annoying. If you expect your terminal to crash
+" regularly, and want vim to back up your work, you might want to remove this.
 set noswapfile
-set backupdir=~/.vim/genfiles/backup
-set undofile
-set undodir=~/.vim/genfiles/undo
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
 
-noremap j gj
-noremap k gk
-inoremap jk <esc>
-nnoremap <space> :
-nnoremap <tab> >>
-nnoremap <backspace> <<
-nnoremap <leader>j <c-w>j 
-nnoremap <leader>k <c-w>k
-nnoremap <leader>h <c-w>h
-nnoremap <leader>l <c-w>l
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>tn :tabnew<cr>
-nnoremap B ^
-vnoremap B ^
-onoremap B ^
-nnoremap E $
-vnoremap E $
-onoremap E $
-nnoremap <leader>a <c-a>
-nnoremap <c-c> "+yy
-nnoremap <c-v> "+p
-vnoremap <c-c> "+y
-vnoremap <c-v> "+p
+" Mappings. These change the things that happen when you press buttons in
+" certain modes. The first character of each command determines the mode in
+" which the mapping is active. Here are some common ones:
+"  Character | Mode
+" -----------|-------------
+"      n     | normal
+"      i     | insert
+"      c     | command
+"      v     | visual
+"      o     | operator
+"    blank   | all modes
+" The 'noremap' means that each mapping is independent of other mappings. This
+" is the recommended way to write vim mappings.
+"
+" A couple of mappings that I'm particularly fond of Uncomment them if you
+" want to use them.
 
-nnoremap <leader>f mzgg=G'z
+" Allows you to exit insert mode into normal mode by tapping jk. With this
+" mapping, you won't have to reach for the escape key as often. It's good for
+" beginners because it encourages them to go into normal mode more often,
+" rather than just using the arrow keys to get around a document. The author
+" of Learn Vimscript the Hard Way lists a couple of good reasons why this
+" mapping is elegant:
+" http://learnvimscriptthehardway.stevelosh.com/chapters/10.html
+" inoremap jk <esc>
 
-
-nnoremap <leader>n :NERDTreeToggle<cr>
-nnoremap <leader>b :TagbarToggle<cr>
-nnoremap <leader>g :GundoToggle<cr>
-
-highlight Pmenu ctermbg=darkgrey ctermfg=white
-highlight PmenuSel ctermbg=darkblue ctermfg=green
-highlight PmenuSbar ctermbg=cyan ctermfg=green
-highlight PmenuThumb ctermbg=white ctermfg=red
+" Allows copying and pasting from the system clipboard using control c and
+" control v on vim installations compiled with x11 support. Usually, this is
+" true if you have gvim installed.
+" vnoremap <c-c> "+y
+" nnoremap <c-c> "+y
+" vnoremap <c-v> "+p
+" nnoremap <c-v> "+p
