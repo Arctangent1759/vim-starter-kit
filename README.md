@@ -6,6 +6,6 @@ Installation
 ------------
 The following downloads this repository and replaces your existing .vim with it.
 
-git clone http://github.com/arctangent1759/vim-starter-kit
-cd vim-starter-kit
-./install.sh
+  git clone http://github.com/arctangent1759/vim-starter-kit
+  cd vim-starter-kit
+  ./install.sh

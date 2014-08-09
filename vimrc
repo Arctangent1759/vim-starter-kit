@@ -8,6 +8,7 @@
 "
 " Alex Chu       : http://github.com/Arctangent1759/vim-stuff
 " Collin Johnson : http://github.com/CollinJ/dotfiles/blob/master/.vimrc
+" Zach Latta     : https://github.com/zachlatta/dotfiles/blob/master/vimrc
 
 " Disable vi compatability. This makes your vim config incompatible with
 " really old legacy systems, but lets you use all the awesome new features
