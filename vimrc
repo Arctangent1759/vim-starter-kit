@@ -54,6 +54,7 @@ set smarttab
 " Code with 2 spaces.
 set tabstop=2
 set shiftwidth=2
+set expandtab
 
 " Shows the command you're entering into normal mode in the status bar.
 set showcmd
